@@ -61,9 +61,9 @@ class LostfoundAdapter :
                 cbItemLostFoundIsFinished.isChecked = data.isCompleted == 1
 
                 val statusText = if (data.status.equals("found", ignoreCase = true)) {
-                    highlightText("Found", Color.GREEN)
+                    highlightText("Found", Color.BLUE)
                 } else {
-                    highlightText("Lost", Color.RED)
+                    highlightText("Lost", Color.YELLOW)
                 }
                 // Menetapkan teks status yang sudah disorot ke TextView
                 tvLostFoundDetailStatus.text = statusText

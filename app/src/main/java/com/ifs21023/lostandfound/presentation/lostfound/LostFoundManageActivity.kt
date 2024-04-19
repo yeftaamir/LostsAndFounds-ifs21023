@@ -48,8 +48,8 @@ class LostFoundManageActivity : AppCompatActivity() {
     ) { result ->
         if (result.resultCode == RESULT_OK) {
             val selectedImageUri = result.data?.data
-            // Lakukan sesuatu dengan URI gambar yang dipilih
-            // Misalnya, tampilkan gambar tersebut di ImageView
+            // Melakukan sesuatu dengan URI gambar yang dipilih
+            // Seperti, tampilkan gambar tersebut di ImageView
             binding.ivSelectedImage.setImageURI(selectedImageUri)
         }
     }
@@ -86,7 +86,7 @@ class LostFoundManageActivity : AppCompatActivity() {
 
     private fun manageAddLostFound() {
         binding.apply {
-            appbarLostFoundManage.title = "Tambah Barang Temuan"
+            appbarLostFoundManage.title = "Tambah Barang"
 
             btnLostFoundManageSave.setOnClickListener {
                 val title = etLostFoundManageTitle.text.toString()
@@ -141,7 +141,7 @@ class LostFoundManageActivity : AppCompatActivity() {
 
     private fun manageEditLostFound(lostfound: DelcomLostfound) {
         binding.apply {
-            appbarLostFoundManage.title = "Ubah Barang Temuan"
+            appbarLostFoundManage.title = "Ubah Barang"
 
             etLostFoundManageTitle.setText(lostfound.title)
             etLostFoundManageDesc.setText(lostfound.description)
