@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Login"
-            android:textSize="34sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="33sp"
             android:textStyle="bold"
             android:textColor="@color/merah"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:text="Silahkan masuk menggunakan akun kamu!"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -45,7 +47,8 @@
             android:hint="Masukkan email kamu"
             android:inputType="text|textEmailAddress"
             android:minHeight="48dp"
-            android:padding="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -60,7 +63,8 @@
             android:hint="Masukkan password kamu"
             android:inputType="text|textPassword"
             android:minHeight="48dp"
-            android:padding="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +86,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:text="Email"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
         <TextView
@@ -92,7 +97,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:text="Password"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLoginEmail" />
         <Button
@@ -105,7 +111,8 @@
             android:padding="15dp"
             android:text="Login"
             android:backgroundTint="@color/merah"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
@@ -127,7 +134,8 @@
             android:layout_marginTop="20dp"
             android:text="Belum memiliki akun? Daftar disini"
             android:textColor="@color/primary"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnLogin" />

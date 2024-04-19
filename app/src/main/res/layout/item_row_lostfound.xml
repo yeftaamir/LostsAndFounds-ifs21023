@@ -31,7 +31,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:text="Judul Barang"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivLostfoundItem"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +45,8 @@
             android:layout_marginTop="5dp"
             android:text="Status Barang"
             android:textColor="#AAAAAA"
-            android:textSize="16sp"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_regular"
             app:layout_constraintStart_toEndOf="@+id/ivLostfoundItem"
             app:layout_constraintTop_toBottomOf="@+id/tvItemLostFoundTitle" />
 

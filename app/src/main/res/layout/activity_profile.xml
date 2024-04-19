@@ -35,13 +35,15 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:text="Nama Pengguna"
-            android:textSize="24sp" />
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="23sp" />
         <TextView
             android:id="@+id/tvProfileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="alamat email" />
+            android:text="alamat email"
+            android:fontFamily="@font/poppins_regular"/>
     </LinearLayout>
     <ImageView
         android:id="@+id/ivProfileBack"
