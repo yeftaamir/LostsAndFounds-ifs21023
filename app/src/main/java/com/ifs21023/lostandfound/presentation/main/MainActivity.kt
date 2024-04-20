@@ -2,6 +2,7 @@ package com.ifs21023.lostandfound.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
@@ -60,6 +61,11 @@ class MainActivity : AppCompatActivity() {
         setupAction()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu) // Sesuaikan dengan nama file XML menu Anda
+        return true
+    }
+
     private fun setupView() {
         showComponentNotEmpty(false)
         showEmptyError(false)
@@ -86,9 +92,20 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.mainMenuSemuaData -> {
+                    // Saat menu "All Data" diklik, panggil fungsi getLostFounds()
+                    observeGetLostFounds()
+                    true
+                }
+                R.id.mainMenuDataSaya -> {
+                    // Saat menu "My Data" diklik, panggil fungsi getLostFound()
+                    observeGetMyLostFounds()
+                    true
+                }
                 else -> false
             }
         }
+
 
         binding.fabMainAddLostFound.setOnClickListener {
             openAddLostFoundActivity()
@@ -219,6 +236,27 @@ class MainActivity : AppCompatActivity() {
                         return true
                     }
                 })
+        }
+    }
+
+    private fun observeGetMyLostFounds() {
+        // Panggil fungsi getLostFound() dengan menyertakan nilai isMe
+        viewModel.getLostFound().observe(this) { result ->
+            if (result != null) {
+                when (result) {
+                    is MyResult.Loading -> {
+                        showLoading(true)
+                    }
+                    is MyResult.Success -> {
+                        showLoading(false)
+                        loadLostFoundsToLayout(result.data)
+                    }
+                    is MyResult.Error -> {
+                        showLoading(false)
+                        showEmptyError(true)
+                    }
+                }
+            }
         }
     }
 

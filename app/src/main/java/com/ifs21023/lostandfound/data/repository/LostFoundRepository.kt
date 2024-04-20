@@ -84,7 +84,7 @@ class LostFoundRepository private constructor(
             //get success message
             emit(
                 MyResult.Success(
-                    apiService.getLostFounds(isCompleted, status)
+                    apiService.getLostFounds(isCompleted, isMe, status)
                 )
             )
         } catch (e: HttpException) {

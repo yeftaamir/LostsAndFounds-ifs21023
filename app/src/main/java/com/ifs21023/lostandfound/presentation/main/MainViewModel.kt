@@ -6,6 +6,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.ifs21023.lostandfound.data.pref.UserModel
 import com.ifs21023.lostandfound.data.remote.MyResult
+import com.ifs21023.lostandfound.data.remote.response.DelcomLostFoundResponse
 import com.ifs21023.lostandfound.data.remote.response.DelcomLostFoundsResponse
 import com.ifs21023.lostandfound.data.remote.response.DelcomResponse
 import com.ifs21023.lostandfound.data.repository.AuthRepository
@@ -29,7 +30,11 @@ class MainViewModel(
     }
 
     fun getLostFounds(): LiveData<MyResult<DelcomLostFoundsResponse>> {
-        return lostfoundRepository.getLostFounds(null,1,null).asLiveData()
+        return lostfoundRepository.getLostFounds(null,0,null).asLiveData()
+    }
+
+    fun getLostFound(): LiveData<MyResult<DelcomLostFoundsResponse>> {
+        return lostfoundRepository.getLostFounds(null, 1, null).asLiveData()
     }
 
     fun putLostFound(
@@ -47,6 +52,7 @@ class MainViewModel(
             status
         )
     }
+
 
     companion object {
         @Volatile

@@ -43,7 +43,7 @@ interface IApiService {
     @GET("lost-founds")
     suspend fun getLostFounds(
         @Query("is_completed") isCompleted: Int?,
-//        @Query("is_me") isMe: Int?,
+        @Query("is_me") isMe: Int?,
         @Query("status") status: String?
     ): DelcomLostFoundsResponse
 
