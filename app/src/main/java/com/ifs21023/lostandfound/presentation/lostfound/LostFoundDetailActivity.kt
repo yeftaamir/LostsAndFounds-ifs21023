@@ -105,7 +105,7 @@ class LostFoundDetailActivity : AppCompatActivity() {
                 val statusText = if (lostfound.status.equals("found", ignoreCase = true)) {
                     highlightText("Found", Color.BLUE)
                 } else {
-                    highlightText("Lost", Color.YELLOW)
+                    highlightText("Lost", Color.RED)
                 }
                 // Menetapkan teks status yang sudah disorot ke TextView
                 tvLostFoundDetailStatus.text = statusText

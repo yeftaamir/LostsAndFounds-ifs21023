@@ -8,6 +8,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".presentation.lostfound.LostFoundManageActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarLayoutLostFoundManage"
         android:layout_width="match_parent"
@@ -58,11 +59,12 @@
 
             <ImageView
                 android:id="@+id/ivSelectedImage"
-                android:layout_width="200sp"
+                android:layout_width="190sp"
                 android:layout_height="120sp"
                 android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etLostFoundManageDesc"
-                tools:layout_editor_absoluteX="93dp"
                 tools:srcCompat="@drawable/noimage" />
 
 
@@ -70,7 +72,6 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Status"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +81,6 @@
                 android:id="@+id/etLostFoundManageStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="9dp"
                 android:entries="@array/status"
                 android:minHeight="48dp"
