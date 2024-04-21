@@ -23,6 +23,7 @@ import com.ifs21023.lostandfound.presentation.ViewModelFactory
 import com.ifs21023.lostandfound.presentation.login.LoginActivity
 import com.ifs21023.lostandfound.presentation.profile.ProfileActivity
 import com.ifs21023.lostandfound.presentation.lostfound.LostFoundDetailActivity
+import com.ifs21023.lostandfound.presentation.lostfound.LostFoundFavoriteActivity
 import com.ifs21023.lostandfound.presentation.lostfound.LostFoundManageActivity
 
 class MainActivity : AppCompatActivity() {
@@ -100,6 +101,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.mainMenuDataSaya -> {
                     // Saat menu "My Data" diklik, panggil fungsi getLostFound()
                     observeGetMyLostFounds()
+                    true
+                }
+                R.id.mainMenuFavoriteTodos -> {
+                    openFavoriteLostFoundActivity()
                     true
                 }
                 else -> false
@@ -297,6 +302,14 @@ class MainActivity : AppCompatActivity() {
             LostFoundManageActivity::class.java
         )
         intent.putExtra(LostFoundManageActivity.KEY_IS_ADD, true)
+        launcher.launch(intent)
+    }
+
+    private fun openFavoriteLostFoundActivity() {
+        val intent = Intent(
+            this@MainActivity,
+            LostFoundFavoriteActivity::class.java
+        )
         launcher.launch(intent)
     }
 }

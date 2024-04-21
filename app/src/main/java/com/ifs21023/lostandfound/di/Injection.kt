@@ -6,6 +6,7 @@ import com.ifs21023.lostandfound.data.pref.dataStore
 import com.ifs21023.lostandfound.data.remote.retrofit.ApiConfig
 import com.ifs21023.lostandfound.data.remote.retrofit.IApiService
 import com.ifs21023.lostandfound.data.repository.AuthRepository
+import com.ifs21023.lostandfound.data.repository.LocalLostFoundRepository
 import com.ifs21023.lostandfound.data.repository.LostFoundRepository
 import com.ifs21023.lostandfound.data.repository.UserRepository
 import kotlinx.coroutines.flow.first
@@ -32,6 +33,10 @@ object Injection {
         val user = runBlocking { pref.getSession().first() }
         val apiService: IApiService = ApiConfig.getApiService(user.token)
         return LostFoundRepository.getInstance(apiService)
+    }
+
+    fun provideLocalLostFoundRepository(context: Context): LocalLostFoundRepository {
+        return LocalLostFoundRepository.getInstance(context)
     }
 
 }
