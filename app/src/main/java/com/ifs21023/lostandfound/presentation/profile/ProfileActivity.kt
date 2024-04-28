@@ -39,6 +39,10 @@ class ProfileActivity : AppCompatActivity() {
             ivProfileBack.setOnClickListener {
                 finish()
             }
+            btnEditProfile.setOnClickListener {
+                // ketika button edit profile di klik
+                startActivity(Intent(this@ProfileActivity, ProfileManageActivity::class.java))
+            }
         }
     }
 

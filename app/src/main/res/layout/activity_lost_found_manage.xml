@@ -58,7 +58,7 @@
 
 
             <ImageView
-                android:id="@+id/ivSelectedImage"
+                android:id="@+id/ivLostFoundManageCover"
                 android:layout_width="190sp"
                 android:layout_height="120sp"
                 android:layout_marginTop="20dp"
@@ -75,7 +75,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Status"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnLostFoundImage" />
+                app:layout_constraintTop_toBottomOf="@+id/btnLostFoundManageGallery" />
 
             <Spinner
                 android:id="@+id/etLostFoundManageStatus"
@@ -87,16 +87,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
+
             <Button
-                android:id="@+id/btnLostFoundImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Upload Gambar"
+                android:id="@+id/btnLostFoundManageGallery"
+                android:layout_width="186dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/primary"
+                android:text="Pilih dari galeri"
+                app:cornerRadius="2pt"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivSelectedImage" />
+                app:layout_constraintTop_toBottomOf="@+id/ivLostFoundManageCover" />
 
             <EditText
                 android:id="@+id/etLostFoundManageTitle"
@@ -131,13 +132,13 @@
                 android:layout_width="382dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Simpan"
                 android:backgroundTint="@color/hijau"
+                android:text="Simpan"
                 android:textSize="14sp"
                 app:cornerRadius="2pt"
                 app:layout_constraintTop_toBottomOf="@+id/etLostFoundManageStatus"
-                tools:layout_editor_absoluteX="0dp"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp" />
 
             <ProgressBar
                 android:id="@+id/pbLostFoundManage"
@@ -149,6 +150,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/btnLostFoundManageSave"
                 app:layout_constraintTop_toTopOf="@+id/btnLostFoundManageSave" />
+
+            <Button
+                android:id="@+id/btnLostFoundManageCamera"
+                android:layout_width="186dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/primary"
+                android:text="Kamera"
+                app:cornerRadius="2pt"
+                app:layout_constraintEnd_toStartOf="@+id/btnLostFoundManageGallery"
+                app:layout_constraintHorizontal_bias="0.019"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivLostFoundManageCover" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

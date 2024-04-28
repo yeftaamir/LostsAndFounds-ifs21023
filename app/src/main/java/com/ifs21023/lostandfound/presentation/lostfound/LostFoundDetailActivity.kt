@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.ifs21023.lostandfound.R
 import com.ifs21023.lostandfound.data.local.entity.DelcomLostFoundEntity
 import com.ifs21023.lostandfound.data.model.DelcomLostfound
@@ -113,6 +114,26 @@ class LostFoundDetailActivity : AppCompatActivity() {
                     }
                 }
 
+                if(lostfound.cover != null){
+                    ivLostFoundDetailImage.visibility = View.VISIBLE
+
+                    Glide.with(this@LostFoundDetailActivity)
+                        .load(lostfound.cover)
+                        .placeholder(R.drawable.noimage)
+                        .into(ivLostFoundDetailImage)
+
+                }else{
+                    ivLostFoundDetailImage.visibility = View.GONE
+                }
+                viewModel.getLocalLostFound(lostfound.id).observeOnce {
+                    if(it != null){
+                        delcomLostFound = it
+                        setFavorite(true)
+                    }else{
+                        setFavorite(false)
+                    }
+                }
+
                 cbLostFoundDetailIsFinished.isChecked = lostfound.isCompleted == 1
 
                 val statusText = if (lostfound.status.equals("found", ignoreCase = true)) {
@@ -181,7 +202,7 @@ class LostFoundDetailActivity : AppCompatActivity() {
                             createdAt = lostfound.createdAt,
                             updatedAt = lostfound.updatedAt,
                             status = "", // Anda perlu memberikan nilai default untuk status
-                            userId = 0 // Anda perlu memberikan nilai default untuk userId
+                            userId = 1 // Anda perlu memberikan nilai default untuk userId
                         )
 
                         setFavorite(true)

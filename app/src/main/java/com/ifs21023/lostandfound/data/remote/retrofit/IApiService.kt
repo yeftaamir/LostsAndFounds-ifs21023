@@ -1,6 +1,7 @@
 package com.ifs21023.lostandfound.data.remote.retrofit
 
 import com.ifs21023.lostandfound.data.remote.response.*
+import okhttp3.MultipartBody
 import retrofit2.http.*
 
 interface IApiService {
@@ -56,4 +57,17 @@ interface IApiService {
     suspend fun deleteLostFound(
         @Path("id") lostfoundId: Int,
     ): DelcomResponse
+
+    @Multipart
+    @POST("lost-founds/{id}/cover")
+    suspend fun addCoverLostFound(
+        @Path("id") lostFoundId: Int,
+        @Part cover: MultipartBody.Part,
+    ): DelcomResponse
+
+    @Multipart
+    @POST("users/photo")
+    suspend fun  addphoto(
+        @Part photo : MultipartBody.Part,
+    ):DelcomResponse
 }

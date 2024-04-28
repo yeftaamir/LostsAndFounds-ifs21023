@@ -6,10 +6,12 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.ifs21023.lostandfound.data.remote.MyResult
 import com.ifs21023.lostandfound.data.remote.response.DataUserResponse
+import com.ifs21023.lostandfound.data.remote.response.DelcomResponse
 import com.ifs21023.lostandfound.data.repository.AuthRepository
 import com.ifs21023.lostandfound.data.repository.UserRepository
 import com.ifs21023.lostandfound.presentation.ViewModelFactory
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
 
 class ProfileViewModel(
     private val authRepository: AuthRepository,
@@ -24,6 +26,13 @@ class ProfileViewModel(
 
     fun getMe(): LiveData<MyResult<DataUserResponse>> {
         return userRepository.getMe().asLiveData()
+    }
+
+    fun editPhoto(
+
+        cover: MultipartBody.Part,
+    ): LiveData<MyResult<DelcomResponse>> {
+        return userRepository.addphoto( cover).asLiveData()
     }
 
     companion object {

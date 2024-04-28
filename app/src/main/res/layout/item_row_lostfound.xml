@@ -7,8 +7,10 @@
     android:layout_marginBottom="6dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rv_lostfound"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
         <CheckBox
             android:id="@+id/cbItemLostFoundIsFinished"
@@ -75,6 +77,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cbItemLostFoundIsFinished"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/noimage" />
+            app:srcCompat="@drawable/noimage"
+            tools:src="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
